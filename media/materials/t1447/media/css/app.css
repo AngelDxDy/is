@@ -25,6 +25,10 @@ body {
     background-color: #000080;
     cursor: pointer;
 }
+/*
+
+
+*/
 
 #wordSearchContainer div.selected {
     outline: 2px solid #FFD700; /* Dorado para indicar selección */
