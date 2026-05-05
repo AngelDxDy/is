@@ -1,0 +1,557 @@
+/***************************
+* Autor: Equipo 3
+* Ingeniería de Software
+* 2025-1
+****************************/
+
+/* 
+GENERAL & DEFAULTS
+============================================================== 
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+/* Ajustes específicos para los botones del índice 3.11 (hiddenText020*)
+   Permiten que el título del botón envuelva y el elemento aumente su altura
+   en lugar de cortar o desbordar el texto. */
+a[onclick*="hiddenText020"] {
+  box-sizing: border-box;
+  display: block;
+  padding: 10px 14px; /* espacio interior para que el texto no toque el borde */
+  height: auto !important; /* permite crecer verticalmente */
+  min-height: 56px; /* conserva aspecto similar al anterior */
+  white-space: normal; /* permite saltos de línea */
+  overflow-wrap: break-word;
+  word-break: break-word;
+  font-size: 1rem; /* tamaño legible y predecible */
+  line-height: 1.2;
+}
+/* BASE FONT SETTINGS: fija una referencia clara para rem/em */
+html {
+  /* Ajusta aquí si quieres reducir/ampliar todo el texto del sitio */
+  font-size: 16px; /* 16px es el tamaño base común (1rem = 16px) */
+}
+
+/* Normalizar tamaño de párrafos dentro de la sección de contenido */
+section p {
+  font-size: 1rem; /* usa la referencia del html para evitar escalados inesperados */
+}
+.for{
+  width: 50%;
+  padding: 12px;
+  margin: 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: none;
+  font-family: 'Myr', sans-serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.resp{
+  font-size: 1.2em;
+  text-align: justify;
+}
+select,button{
+  width: 15%;
+  padding:12px;
+  margin: 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background-color: #ffffff; 
+  color: #1d1d1f; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+*+html body {
+  background: #000000 url(../temas/tema0.html) center center fixed no-repeat;
+}
+@media all and (min-width:0) {
+  html body { background: none; }  /* IE9-IE10pp4 */
+}
+
+section,
+aside,
+nav,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  font-family: 'Myr', sans-serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 1em;
+  color: #ffffff;
+}
+
+
+
+
+
+a:hover {
+  color: #8bbfff;
+}
+a:hover span {
+  color: #8bbfff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: normal;
+  padding-bottom: 15px;
+  width: 800px;
+  margin: 0 auto;
+}
+
+h1 b,
+h2 b,
+h3 b,
+h4 b,
+h5 b,
+h6 b,
+p b {
+  font-weight: bold;
+  color: #fefae0;
+  background-color: #2435a4;
+  border: 1px solid #ffffff; /* Añade un contorno de 1px de ancho con color rojo (#ff0000) */
+  border-radius: 10px;
+  text-align: center;
+  padding: 2px 10px;
+  width: 150px; /* Ajusta el ancho */
+  height: 5px; /* Ajusta la altura */
+}
+h5 u,
+p u{
+  font-weight: bold;
+  color: #fefae0;
+  background-color: #2435a4;
+  border: 1px solid #ffffff; /* Añade un contorno de 1px de ancho con color rojo (#ff0000) */
+  border-radius: 10px;
+  text-align: center;
+  padding: 2px 10px;
+  width: 150px; /* Ajusta el ancho */
+  height: 5px; /* Ajusta la altura */
+}
+h2 t{
+  font-weight: bold;
+  color :#f6aa1c;
+}
+h2 v{
+  font-weight: bold;
+  color: #f6aa1c;
+}
+h3 t{
+  font-weight: bold;
+  color:#a87b05;
+}
+h4 t{
+  font-weight: bold;
+  color:#a87b05;
+}
+
+
+h4 o{
+  font-weight: bold;
+  color: #fefae0;
+  background-color: #72b01d;
+  border: 2px solid #fefae0; /* Añade un contorno de 2px de ancho con color rojo (#ff0000) */
+  border-radius: 7px;
+  text-align: center;
+  padding: 2px 10px;
+  width: 220px; /* Ajusta el ancho */
+  height: 20px; /* Ajusta la altura */
+}
+video,
+object,
+table {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.2em;
+  text-align: justify;
+  
+}
+td {
+  padding: 15px; /* Ajusta el valor según la cantidad de espacio que desees */
+  border: 1px solid #ddd; /* Agrega un borde a las celdas para mayor claridad */
+}
+img {
+  display: block;
+  margin: 0 auto;
+  width: 350px;
+  border-radius: 10px;
+}
+div img {
+  width: 100%; /* Ancho deseado */
+  height: 100%; /* Alto deseado */
+}
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  text-align: center;
+  color: #1d1d1f;
+  margin-top: 50px;
+  padding-top: 15px;
+}
+#wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+h2 {
+  font-size: 2em;
+}
+h3 {
+  /* Corregido: usar valores válidos y unidades basadas en la referencia html */
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.8rem; /* ~25.6px si html font-size = 16px */
+}
+h4 {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.6rem; /* ~18px */
+}
+h5{
+  font-size: 1.4em;
+  text-align: justify;
+}
+h6 {
+  font-size: 1.2em;
+}
+h7 {
+  font-size: 0.8em;
+}
+p.tag {
+  font-size: 2em;
+  text-align: justify;
+}
+/* 
+LEFT & RIGHT BARS
+============================================================== 
+*/
+#nav-right-trigger {
+  display: block;
+  width: 100px;
+  height: 100%;
+  background: black;
+  position: absolute;
+  z-index: 9999;
+}
+
+
+
+#nav-right-trigger {
+  right: 0;
+  background: url(../img/ui_nr-trigger.png) no-repeat;
+}
+#nav-right {
+  display: block;
+  width: 220px;
+  height: 100%;
+  min-height: 520px;
+  background: transparent\9;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+  zoom: 1;
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+}
+#nav-right:nth-child(n) {
+	filter: none;
+}
+#nav-right ul {
+  list-style: none;
+  display: block;
+  width: 100%;
+  height: auto;
+  clear: both;
+}
+
+#nav-right ul li {
+  display: block;
+  width: 92.5%;
+  clear: both;
+  position: relative;
+  float: left;
+  padding-left: 15px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+}
+
+
+
+
+
+
+#nav-right {
+  right: -220px;
+}
+#nav-right ul#files {
+  position: relative;
+  float: left;
+}
+#nav-right ul#files h2 {
+  background: url(../img/ui_nr-files.png) no-repeat 15px center;
+  border-top: 1px solid #666666;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+#nav-right ul#files li {
+  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+#nav-right ul#contact {
+  position: absolute;
+  bottom: 0px;
+}
+#nav-right ul#contact h2 {
+  background: url(../img/ui_nr-contact.png) no-repeat 15px center;
+  border-top: 1px solid #666666;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+#nav-right ul#contact h2 {
+  background: url(../img/ui_nr-contact.png) no-repeat 15px center;
+  border-top: 1px solid #666666;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/*DIV THEME */
+div#theme {
+  margin-left: 180px !important; 
+  width: calc(100% - 180px) !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+/* NAV LEFT*/
+#nav-left {
+  display: block !important;
+  visibility: visible !important;
+  width: 180px !important;
+  height: 100vh !important;
+  background-color: #f5f5f7 !important; /* Gris muy claro tipo Apple */
+  position: fixed !important;
+  left: 0 !important;
+  top: 0 !important;
+  z-index: 99999 !important; /* Esto la pone por encima de todo */
+  border-right: 1px solid #d2d2d7 !important;
+}
+
+#nav-left * {
+  color: #1d1d1f !important; /* Fuerza el texto a negro Apple */
+  opacity: 1 !important;
+}
+
+#nav-left ul h2 {
+  font-size: 11px;
+  font-weight: 600;
+  color: #86868b; 
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 30px 0 15px 20px;
+  background: none; 
+}
+
+#nav-left ul#index li {
+  padding: 8px 20px;
+  border-bottom: none !important; 
+}
+
+#nav-left ul#index li span, 
+#nav-left ul#index li a {
+  font-size: 13px;
+  color: #1d1d1f;
+  font-weight: 400;
+  transition: all 0.2s ease;
+}
+
+#nav-left ul#index li:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 8px; 
+  margin: 0 10px; 
+}
+
+#nav-left ul#index li:hover span {
+  color: #0066cc; 
+}
+
+
+
+section, aside, nav, div, h2, h3, h4, h5, h6, p, a, span {
+    color: #1d1d1f !important;
+}
+
+
+/* 
+IFRAME
+============================================================== 
+*/
+iframe {
+  display: block;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/iframe_bg.png);
+  zoom: 1;
+  z-index: 2;
+}
+*+html iframe {
+  background: none;
+}
+@media all and (min-width:0) {
+  html iframe { background: url(../img/iframe_bg.png); }
+}
+/* 
+SECTION
+============================================================== 
+*/
+section {
+  display: block;
+  width: 945px;
+  height: auto;
+  margin: 10px auto;
+  padding-bottom: 20px;
+}
+/* 
+FOOTER
+============================================================== 
+*/
+footer {
+  display: block;
+  width: 170px;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+}
+footer img {
+  display: block;
+  height: 70px;
+  width: auto;
+  position: absolute;
+  bottom: 7.5px;
+}
+footer img#logofi {
+  right: 30px;
+}
+footer img#logounam {
+  right: 105px;
+}
+/* 
+CLASES ADICIONALES
+============================================================== 
+*/
+.mover-derecha {
+  /* Desplaza el bloque hacia la derecha. Ajusta el valor a tu preferencia */
+  margin-left: 80px; /* puedes usar px o % */
+  display: block;
+  /* Si quieres que todo el bloque mantenga alineación justificada: */
+  text-align: justify;
+}
+
+.mover-derecha-mediano {
+  /* Desplaza el bloque hacia la derecha. Ajusta el valor a tu preferencia */
+  margin-left: 60px; /* puedes usar px o % */
+  display: block;
+  /* Si quieres que todo el bloque mantenga alineación justificada: */
+  text-align: justify;
+}
+
+.mover-derecha-pequeño {
+  /* Desplaza el bloque hacia la derecha. Ajusta el valor a tu preferencia */
+  margin-left: 40px; /* puedes usar px o % */
+  display: block;
+  /* Si quieres que todo el bloque mantenga alineación justificada: */
+  text-align: justify;
+}
+
+/* Toggle cards inside sections: grid of button-like cards that reveal details */
+.toggle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+.toggle-grid .card-btn {
+
+  background: #f6aa1c;
+  border: 1px solid #ffffff;
+  color: #000000;
+  /*background: #ffffff;
+  border: 3px solid #000;*/
+  border-radius: 12px;
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+  width: 200px;
+	height: 70px;
+}
+.toggle-grid .card-btn:focus {
+  outline: 3px solid #f6aa1c;
+}
+.toggle-grid .card-content {
+  display: none;
+  background: transparent;
+  color: #ffffff;
+  padding: 12px 10px 0 10px;
+}
+.toggle-grid .card.open .card-content {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .toggle-grid { grid-template-columns: 1fr; }
+}
+
+
+
+
+/* 
+FONT-FACE
+============================================================== 
+*/
+@font-face {
+  font-family: 'Myr';
+  src: url('fonts/myrr.html');
+  src: url('fonts/myrrd41dd41dd41d.html?#iefix') format('embedded-opentype'), url('fonts/myrr-2.html') format('woff'), url('fonts/myrr-3.html') format('truetype'), url('fonts/myrr-4.html#Name') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
